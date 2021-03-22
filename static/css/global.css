@@ -1,0 +1,336 @@
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    /* display: inline-block; */
+    display: block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+    width: 200px;
+}
+
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.button1:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+
+.buttonpager {
+    /* margin-top: 160px; */
+    width: 30%;
+    display: inline-block;
+    /* background-color: #4CAF50;  */
+    /* background-color: #73a942;  */
+    background-color: #96e072;
+    
+    color: black; 
+    border-radius: 4px;
+    border: 2px solid black ;
+    /* max-height: 80%; */
+}
+
+.buttonpager:hover {
+    /* background-color: green; */
+    /* background-color: #538d22; */
+    background-color: #3da35d;
+    color: white;
+}
+
+
+.buttonpageractive {
+    /* margin-top: 160px; */
+    width: 30%;
+    display: inline-block;
+    /* background-color: #00b4d8;  */
+    /* background-color: #245501;     */
+    background-color: #3da35d;
+    /* color: black;  */
+    color: black; 
+    border-radius: 4px;
+    border: 2px solid black ;
+    /* max-height: 80%; */
+}
+
+.buttonpageractive:hover {
+    /* background-color: #0096c7; */
+    /* background-color: #1a4301; */
+    background-color: #3da35d;
+    color: white;
+}
+
+
+.buttonpagersubmit {
+    width: 30%;
+    display: inline-block;
+    /* background-color: #ef233c; */
+    background-color: #96e072;
+    
+    color: black; 
+    border-radius: 4px;
+    border: 2px solid black ;
+    /* max-height: 80%; */
+}
+
+.buttonpagersubmit:hover {
+    /* background-color: #d90429; */
+    /* background-color: #3da35d; */
+    background-color: #fdc921;
+    
+    color: black;
+}
+
+
+.pokecontainer {
+    /* padding-left: 5%; */
+    max-width: fit-content;
+    text-align: center;
+}
+
+.centering {
+    padding-left: 18%;
+}
+
+.limit {
+    /* width:156px; */
+    width: fit-content;
+    word-wrap: break-word;
+    /* align-self: center; */
+    margin-left: auto;
+    margin-right: auto;
+    /* display: inline;
+    float: none; */
+}
+
+
+.button2 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+.button2:hover {
+    background-color: #008CBA;
+    color: white;
+}
+
+.button3 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #f44336;
+}
+
+.button3:hover {
+    background-color: #f44336;
+    color: white;
+}
+
+
+.pokeimg {
+    min-height: 30%;
+    min-height: 30%;
+    /* max-height: 150%; */
+    /* max-width: 150%; */
+    border-style: outset;
+    border-width: 30px;
+    /* border-color: #16DB93; */
+
+    /* border-top-color: #16DB93;
+    border-bottom-color: #A4036F;
+    border-left-color: #EFEA5A;
+    border-right-color: #FE5E41; */
+
+    /* border-top-color: #dee2e6;
+    border-bottom-color: #ced4da;
+    border-left-color: #adb5bd;
+    border-right-color: #adb5bd; */
+
+
+    /* margin-left: 58%; */
+}
+
+
+.pokeimg-wild {
+    min-height: 30%;
+    min-height: 30%;
+    border-style: outset;
+    border-width: 30px;
+    
+    border-top-color: #aad576;
+    border-bottom-color: #538d22;
+    border-left-color: #73a942;
+    border-right-color: #245501;
+}
+
+
+.pokeimg-catched {
+    min-height: 30%;
+    min-height: 30%;
+    border-style: outset;
+    border-width: 30px;
+
+    border-top-color: #ffea00;
+    border-bottom-color: #ffea00;
+    border-left-color: #ffdd00;
+    border-right-color: #ffd000;
+}
+
+.pokeimg-notcatched {
+    min-height: 30%;
+    min-height: 30%;
+    border-style: outset;
+    border-width: 30px;
+
+    border-top-color: #dee2e6;
+    border-bottom-color: #ced4da;
+    border-left-color: #adb5bd;
+    border-right-color: #adb5bd;
+}
+
+
+
+/* FLEX CONTAINERS */
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    flex: 1;
+    /* border: 2px solid yellow; */
+    word-wrap: break-word;
+    width: 140px;
+    /* height: 275px; */
+}  
+
+.flex-child-text {
+    /* flex: 1; */
+    /* border: 2px solid yellow; */
+    margin-left: 30px;
+    margin-top: 10px;
+    word-wrap: break-word;
+    /* width: 240px; */
+}  
+
+.flex-child:first-child {
+    margin-right: 25px;
+} 
+
+/* .gamebox * { */
+    /* padding-top: 10px; */
+    /* height: 110px; */
+/* } */
+
+.codeblock {
+    padding-left: 10px;
+    padding-top: 10px;
+}
+
+
+
+
+/* TABLES */
+.styled-table {
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    /* height: 40px; */
+}
+
+
+.styled-table thead tr {
+    /* background-color: #009879; */
+    background-color: #73a942;
+    
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 10px;
+    text-align: center; 
+    vertical-align: middle;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+/* .styled-table tbody tr:last-of-type {
+
+    background-color: #73a942;
+} */
+
+
+/* .styled-table tbody tr.active-row { */
+    /* font-weight: bold; */
+    /* color: #009879; */
+    /* color: #73a942; */
+/* } */
+
+
+
+
+
+/* TOOLTIPS */
+.tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black; /* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 220px;
+    
+    /* top: -5px; */
+    /* right: 105%; */
+
+
+    /* width: fit-content; */
+    /* width: max-content; */
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+/* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+
+
+/* FLASH */
+
+.flash {
+    /* margin-bottom: 32px; */
+    min-height: 32px;
+}
+

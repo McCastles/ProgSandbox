@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+
+
+
+{% block content %}
+
+
+{% if too_fast %}
+
+Na razie nie widać pokemonów... Poczekaj troszkę, może się pojawią :)
+
+{% elif game %}
+
+
+
+<div class="flex-container">
+
+    <div class="pokecontainer flex-child">
+        <img class="pokeimg-wild" src="{{img_url}}" alt="{{img_url}}" width="75%">
+        <p class="limit">{{pokename}} ({{rarity}})</p>
+    </div>
+
+    <div class="flex-child">
+        <b>
+
+            Masz szanse złapać pokemona, jeżeli podasz poprawne odpowiedzi na wszystkie trzy pytania.
+            Jeżeli nie udało się złapać pokemona za pierwszym razem, nic strasznego: jest
+            szansa, że napotkasz takiego jeszcze raz!
+            Złapanych pokemonów można obejrzeć w Kolekcji we wkładce Konto.
+            Powodzenia! :)
+        </b>
+    </div>
+
+</div>
+
+<form action="/python_trainer" method="POST" class="form">
+    <!-- <div class="gamebox"> -->
+
+
+
+        <div>
+            Pytanie {{no+1}} (№{{questions[no]['ID']}}). {{ questions[no]['question'] }}
+            <br>
+            <textarea class="codeblock" rows={{questions[no]["lines"]}} cols=65 readonly>
+{{ questions[no]['code'] }}
+        </textarea>
+            <textarea class="codeblock" name="answer" cols="65" rows="2" placeholder="twoja odpowiedź">{{answers[no]}}</textarea>
+        </div>
+
+
+
+    <!-- </div> -->
+
+    <div class='pager'>
+        {% for i in range(3) %}
+
+        {% if i == no %}
+        <button name="page" class="button buttonpageractive" value="{{i}}" type="submit">Pytanie {{i+1}}</button>
+        {% else %}
+        <button name="page" class="button buttonpager" value="{{i}}" type="submit">Pytanie {{i+1}}</button>
+        {% endif %}
+
+        {% endfor %}
+
+        <button name="submit" class="button buttonpagersubmit" type="submit" value="submit">Sprawdź</button>
+    </div>
+</form>
+
+{% else %}
+
+
+<h2>
+    Witamy w grze edukacyjnej Python Trainer!
+
+</h2>
+
+<b>
+    <p>
+        Podczas gry będziesz miał możliwość złapać pokemona!
+    </p>
+    <p>
+        Trudność pytań zależy od poziomu gry, który wybierzesz, ale im trudniejsze są pytania tym większa jest szansa
+        napotkać rzadkiego pokemona!
+    </p>
+    <p>
+        Gra jest oparta o założenie, że wielokrotne szybkie testowanie już posiadanej wiedzy pomaga
+        lepszemu zapamiętywaniu, i człowiek szybciej przypomina ogólne zasady i szczegóły.
+        Baza pytań cały czas rośnie :)
+    </p>
+    <p>
+        Proszę wybrać poziom trudności pytań:
+    </p>
+</b>
+
+<br>
+
+
+<div class="centering">
+    <form method="POST" action="/generate_quest">
+        <button name="action" class="button button1" value="easy" type="submit">Prosty</button>
+        <button name="action" class="button button2" value="medium" type="submit">Średni</button>
+        <button name="action" class="button button3" value="hard" type="submit">Trudny</button>
+    </form>
+</div>
+
+
+{% endif %}
+
+{% endblock%}

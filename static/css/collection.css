@@ -1,0 +1,83 @@
+table.scroll {
+    /* width: 716px; */
+    /* height: 600px; */
+    /* 140px * 5 column + 16px scrollbar width */
+    border-spacing: 0;
+    /* border: 2px solid black; */
+
+    /* border-collapse:separate; */
+    /* border-spacing:0 5px; */
+}
+
+table.scroll tbody,
+table.scroll thead tr {
+    /* height: 150px; */
+    display: block;
+}
+
+table.scroll tbody {
+    height: 610px;
+    width: 540px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+table.scroll tbody td {
+    /* border-style: solid; */
+    /* border-color: black; */
+}
+
+table.scroll tbody td {
+    /* text-align: center; 
+    vertical-align: middle; */
+    /* height: 20px; */
+    padding-right: 20px;
+}
+
+table.inner tbody {
+    /* height: 610px; */
+    width: 540px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    /* width: 240px; */
+    /* margin-right: 20px; */
+    /* height: 200px; */
+}
+
+
+/* table.scroll thead th { */
+    /* width: 140px; */
+/* } */
+
+/* table.scroll thead th:last-child {
+    width: 156px;
+} */
+
+thead tr th {
+    height: 30px;
+    line-height: 30px;
+    padding-bottom: 10px;
+    /*text-align: left;*/
+}
+
+/* tbody {
+    border-top: 2px solid black;
+} */
+
+/* tbody td:last-child,
+thead th:last-child {
+    border-right: none !important;
+} */
+
+.pokerecord {
+    /* display:inline-block; */
+    margin-bottom: 10px;
+    /* margin-right: 5px; */
+}
+
+table tr:nth-of-type(4n) td {
+    /* border-bottom: 3px solid #f00; */
+    padding-bottom: 175px;
+}
+
+

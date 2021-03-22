@@ -1,0 +1,91 @@
+{% extends "layout.html" %}
+
+
+
+
+{% block content %}
+
+
+<link href="../static/css/collection.css" rel="stylesheet" type="text/css" />
+
+
+{% if nopoke %}
+
+Ta lista pokemonów na razie jest pusta
+
+{% elif game %}
+
+Na razie nie masz dostępu do kolekcji, bo masz nieskończoną grę
+
+{% else %}
+
+
+
+<table class="scroll">
+    <thead>
+        <tr>
+            <th>Twoje pokemony, data, twoje odpowiedzi</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        {% for poke in userpoke %}
+
+        <!-- <div > -->
+        <tr>
+            <td rowspan="4">
+
+
+                <div class="pokecontainer flex-child">
+                    {% if poke['good']%}
+                    <img class="pokeimg-catched" src="{{poke['img_url']}}" alt="{{poke['pokename']}}" width="75%">
+                    {% else %}
+                    <img class="pokeimg-notcatched" src="{{poke['img_url']}}" alt="{{poke['pokename']}}" width="75%">
+                    {% endif %}
+
+                    <p class="limit">{{poke['pokename']}}</p>
+                </div>
+            </td>
+
+            <td>
+                {{poke['datetime']}}
+            </td>
+            <td>
+                {% if poke['good']%}
+                Złapany!
+                {% else %}
+                Nie złapany
+                {% endif %}
+            </td>
+        </tr>
+
+        {% for i in range(3) %}
+        <tr>
+            <td>
+                <div class="tooltip">Pytanie {{i+1}} (#{{poke['qIDs'][i]}})
+                    <span class="tooltiptext">
+
+                        {{ poke['questions'][i]['question'] }}
+                        {{ poke['questions'][i]['code'] }}
+
+                    </span>
+                </div>
+            </td>
+            <td>
+                <span>
+                    {{poke['answers'][i]}}
+                </span>
+            </td>
+        </tr>
+        {% endfor %}
+        <!-- </div> -->
+
+        {% endfor %}
+
+
+    </tbody>
+</table>
+
+{% endif %}
+
+{% endblock%}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <title>Prog Sandbox</title>
+
+    <link href="../static/css/tooplate_style.css" rel="stylesheet" type="text/css" />
+    <link href="../static/css/global.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="../static/css/coda-slider.css" type="text/css" charset="utf-8" />
+
+
+</head>
+
+<body>
+
+    <div id="slider">
+        <div id="tooplate_wrapper">
+            <div id="tooplate_sidebar">
+
+                <div id="header">
+                    <h1><a href="/"><img src="../static/images/logo.png" height=220% title="Prog Sandbox"
+                                alt="Prog Sandbox" /></a>
+                    </h1>
+                </div>
+
+                <div id="menu">
+                    <ul class="navigation">
+                        <li><a href="/" class="selected menu_01">Strona główna</a></li>
+                        <!-- <li><a href="/change_language" class="selected menu_01">Zmień język</a></li> -->
+                        {% if username %}
+                        <li><a href="/account" class="selected menu_03">Twoje konto</a></li>
+                        <li><a href="/python_trainer" class="selected menu_03">Python Trainer</a></li>
+                        <li><a href="/logout" class="selected menu_02">Wyloguj się</a></li>
+                        {% else %}
+                        <li><a href="/signup" class="selected menu_02">Utwórz konto</a></li>
+                        <li><a href="/login" class="selected menu_02">Zaloguj się</a></li>
+                        {% endif %}
+
+
+
+
+
+
+                        <!-- <li><a href="#contactus" class="menu_05">Contact</a></li> -->
+                    </ul>
+                </div>
+            </div> <!-- end of sidebar -->
+
+            <div id="content">
+
+                <div class="flash">
+                    {% with messages = get_flashed_messages() %}
+                    {% if messages %}
+                    <ul class="flashes">
+
+                        {% for message in messages %}
+                        <li>{{ message }}</li>
+
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                    {% endwith %}
+                </div>
+
+
+                {% block content %}
+                {% endblock %}
+
+            </div> <!-- end of content -->
+        </div>
+
+        <div id="footer">
+
+
+            <div id="footer_left">
+
+                Copyright © 2048 <a href="#">Company Name</a><br />
+                Designed by <a href="http://www.tooplate.com">Free HTML Templates</a><br />
+
+            </div>
+
+            <div class="cleaner"></div>
+        </div>
+
+
+
+
+
+</body>
+
+</html>

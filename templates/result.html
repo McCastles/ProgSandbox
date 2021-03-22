@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+
+
+
+{% block content %}
+
+
+
+<div class="flex-container">
+
+    <div class="pokecontainer flex-child">
+        {% if good == True %}
+        <img class="pokeimg-catched" src="{{img_url}}" alt="{{img_url}}" width="75%">
+        {% else %}
+        <img class="pokeimg-notcatched" src="{{img_url}}" alt="{{img_url}}" width="75%">
+        {% endif %}
+        <p class="limit">{{pokename}} ({{rarity}})</p>
+
+    </div>
+
+    <div class="flex-child">
+        <b>
+            Koniec! Sprawdzamy twoje wyniki...
+        </b>
+    </div>
+
+</div>
+
+
+<!-- <div class='gamebox'> -->
+
+
+<table class="styled-table">
+    <thead>
+        <tr>
+            <th>Pytanie</th>
+            <th>Twoja odpowiedź</th>
+            <th>Poprawne odpowiedzi</th>
+            <th>Wynik</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        {% for i in range(3) %}
+
+        <tr>
+            <td>
+                <div class="tooltip">Pytanie {{i+1}}
+                    <span class="tooltiptext">{{questions[i]['question']}}
+
+                        {{questions[i]['code']}}
+                    </span>
+                </div>
+
+
+            </td>
+            <td>{{answers[i]}}</td>
+            <!-- <td>{{questions[i]['answers']}}</td> -->
+            <td>{{correct_string[i]}}</td>
+            <!-- <td>{{answers[i] in questions[i]['answers']}}</td> -->
+            <td>{{verdict[i]}}</td>
+        </tr>
+
+        {% endfor %}
+        <!-- 
+        <tr class="active-row">
+            <td>Melissa</td>
+            <td>5150</td>
+        </tr> -->
+    </tbody>
+</table>
+
+
+{% if good == True %}
+
+Złapałeś pokemona {{pokename}}! Sprawdź swoją <a href="/account">Kolekcję</a> :)
+
+
+{% else  %}
+
+Niestety nie udało się złapać {{pokename}}. Uda się następnym razem! :)
+
+{% endif  %}
+
+
+
+{% endblock%}
